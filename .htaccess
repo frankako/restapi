@@ -1,0 +1,9 @@
+php_flag display_error on
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^posts$ controller/Posts.php [L]
+RewriteRule ^posts/([0-9]+)/users/([0-9]+)$ controller/Posts.php?post_id=$1&user_id=$2 [L]
